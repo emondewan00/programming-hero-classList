@@ -1,0 +1,10 @@
+.milestone-heading{
+    display: flex;
+    align-items: center;
+}
+.milestone-body{
+    display: none;
+}
+.show{
+    display: block;
+}
