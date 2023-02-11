@@ -9,7 +9,7 @@ function displayList(){
             <div class="checkbox pe-3" >
                 <input type="checkbox" name="" id="" onClick="doneList(this,${data._id})">
             </div>
-            <div class="milestone-text" onClick="myFunction(this)" >
+            <div class="milestone-text" onClick="myFunction(this,${data._id})" >
                 <h3>${data.name}</h3>
             </div>
         </div>
@@ -25,7 +25,7 @@ displayList()
 
 
 
-function myFunction(ele){
+function myFunction(ele,id){
     const crouunt=ele.parentElement.nextSibling.nextSibling;
     const shown=document.querySelector(".show");
     
@@ -33,6 +33,8 @@ function myFunction(ele){
         shown.classList.remove("show")
     }
     crouunt.classList.toggle("show");
+
+    imgUpdate(id);
 }
 
 
@@ -65,6 +67,13 @@ function sortElement(parent,section){
     }
 }
 
+
+
+function imgUpdate (id){
+    const setImg=document.getElementById("module-img").src=milestoneData[id].image;
+    const videoHeading=document.querySelector(".img-heading").innerText=milestoneData[id].name;
+    const videoDescription=document.querySelector(".detail").innerText=milestoneData[id].description;
+}
 
 
 
